@@ -22,16 +22,16 @@
     </record>
 
     <!-- new record 1 -->
-    <record id="warehouse_store_rule" model="ir.rule">
-        <field name="name">Warehouse multi_store</field>
+    <record id="warehouse_operations_store_rule" model="ir.rule">
+        <field name="name">Stock operations multi_warehouse</field>
         <field name="model_id" ref="stock.model_stock_picking"/>
         <field name="global" eval="True"/>
         <field name="domain_force">[('picking_type_id.warehouse_id.store_ids','=',user.store_id.id)]</field>
     </record>
 
     <!-- new record 2 -->
-    <record id="warehouse_store_type_rule" model="ir.rule">
-        <field name="name">Warehouse multi_store operations</field>
+    <record id="picking_type_store_rule" model="ir.rule">
+        <field name="name">Picking type multi_warehouse</field>
         <field name="model_id" ref="stock.model_stock_picking_type"/>
         <field name="global" eval="True"/>
         <field name="domain_force">[('warehouse_id.store_ids','=',user.store_id.id)]</field>
