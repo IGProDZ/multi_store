@@ -26,7 +26,7 @@
         <field name="name">Stock operations multi_warehouse</field>
         <field name="model_id" ref="stock.model_stock_picking"/>
         <field name="global" eval="True"/>
-        <field name="domain_force">['|',(user.store_id.id,'=',False),('picking_type_id.warehouse_id.store_ids','=',user.store_id.id)]</field>
+        <field name="domain_force">['|',([user.store_id.id],'=',False),('picking_type_id.warehouse_id.store_ids','=',user.store_id.id)]</field>
     </record>
 
     <!-- new record 2 -->
@@ -34,7 +34,7 @@
         <field name="name">Picking type multi_warehouse</field>
         <field name="model_id" ref="stock.model_stock_picking_type"/>
         <field name="global" eval="True"/>
-        <field name="domain_force">['|',(user.store_id.id,'=',False),('warehouse_id.store_ids','=',user.store_id.id)]</field>
+        <field name="domain_force">['|',([user.store_id.id],'=',False),('warehouse_id.store_ids','=',user.store_id.id)]</field>
     </record>
 
     <record id="account_move_store_rule" model="ir.rule">
